@@ -1,7 +1,7 @@
 {
     "type": "extension",
     "id": "com.fastspot.link-finder-field-type",
-    "version": "1.0",
+    "version": "1.1",
     "revision": 3,
     "compatibility": "4.2+",
     "title": "Link Finder",
