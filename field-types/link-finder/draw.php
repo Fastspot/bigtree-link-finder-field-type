@@ -12,6 +12,7 @@
 	*/
 ?>
 <style>
+	#<?=$field["id"]?>_lf { position: relative; }
 	#<?=$field["id"]?>_lf_output { background: #FFF; border: 1px solid #AAA; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); max-height: 200px; overflow-y: auto; margin: -2px 0 0 0; position: absolute; width: 896px; z-index: 3; }
 	#<?=$field["id"]?>_lf_output div { background: #59A8E9; color: #FFF; font-size: 13px; height: auto; line-height: 20px; padding: 4px 10px 3px; }
 	#<?=$field["id"]?>_lf_output a { border-bottom: 1px solid #DDD; color: #333; display: block; font-size: 10px; height: auto; line-height: 14px; padding: 3px 10px; }
@@ -19,7 +20,7 @@
 	#<?=$field["id"]?>_lf_output a:last-child { border-bottom: none; }
 	#<?=$field["id"]?>_lf_output a:hover { background: #EEE; }
 </style>
-<div class="text_input">
+<div class="text_input" id="<?=$field["id"]?>_lf">
 	<input class="<?=$field["options"]["validation"]?>" type="text" tabindex="<?=$field["tabindex"]?>" name="<?=$field["key"]?>" value="<?=$field["value"]?>" id="<?=$field["id"]?>" />
 	<div id="<?=$field["id"]?>_lf_output" style="display: none;"></div>
 </div>
