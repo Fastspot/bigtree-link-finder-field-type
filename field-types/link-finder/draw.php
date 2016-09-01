@@ -57,6 +57,7 @@
 
 			Results.css({ width: ResultWidth }).scrollTop(0);
 			ValueField.val(query);
+			QueryField.attr("placeholder", "");
 
 			if (!query.length) {
 				Results.hide().html("");

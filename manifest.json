@@ -1,8 +1,8 @@
 {
     "type": "extension",
     "id": "com.fastspot.link-finder-field-type",
-    "version": "2.0",
-    "revision": 4,
+    "version": "2.0.1",
+    "revision": 5,
     "compatibility": "4.2+",
     "title": "Link Finder",
     "description": "A field type that allows a user to begin typing and find links to existing pages and files on the site through a search interface.",
