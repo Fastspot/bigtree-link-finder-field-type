@@ -55,6 +55,39 @@
 		QueryField.on("keyup", function() {
 			var query = QueryField.val().trim();
 
+			queryChange(query);
+		});
+
+		QueryField.on("paste", function(e) {
+			var clipboard_data = e.originalEvent.clipboardData || window.clipboardData;
+    		var pasted_data = clipboard_data.getData('Text');
+
+    		queryChange(pasted_data);
+		});
+
+		QueryField.on("blur", function() {
+			setTimeout(function() {
+				Results.hide();
+			}, 250);
+		});
+
+		QueryField.on("focus", function() {
+			if (Results.html()) {
+				Results.show();
+			}
+		});
+
+		Results.on("click", "a", function(ev) {
+			ev.preventDefault();
+			ev.stopPropagation();
+
+			ValueField.val($(this).attr("href"));
+			QueryField.val("").attr("placeholder", $(this).attr("data-placeholder"));
+			Results.hide().html("");
+		});
+
+		function queryChange(query) {
+
 			Results.css({ width: ResultWidth }).scrollTop(0);
 			ValueField.val(query);
 			QueryField.attr("placeholder", "");
@@ -70,27 +103,6 @@
 					});
 				}
 			}
-		});
-
-		Results.on("click", "a", function(ev) {
-			ev.preventDefault();
-			ev.stopPropagation();
-
-			ValueField.val($(this).attr("href"));
-			QueryField.val("").attr("placeholder", $(this).attr("data-placeholder"));
-			Results.hide().html("");
-		});
-
-		QueryField.on("blur", function() {
-			setTimeout(function() {
-				Results.hide();
-			}, 250);
-		});
-
-		QueryField.on("focus", function() {
-			if (Results.html()) {
-				Results.show();
-			}
-		});
+		}
 	})();
 </script>
